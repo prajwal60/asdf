@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<main id="main">    
+  <section id="about" class="section-bg">
+      <div class="container" style="align-content: center;">         
+            <div class="about-content">
+              <h2 style="text-align: center;">Graphic Designing</h2>
+              <h3 style="text-align: center;">This is all about Graphic Designing.</h3>
+              <hr style="border-top: 2px dotted blue;">
+              <img src="{% static '/img/about-img.jpg' %}" class="center" alt="">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p>Aut dolor id. Sint aliquam consequatur ex ex labore. Et quis qui dolor nulla dolores neque. Aspernatur consectetur omnis numquam quaerat. Sed fugiat nisi. Officiis veniam molestiae. Et vel ut quidem alias veritatis repudiandae ut fugit. Est ut eligendi aspernatur nulla voluptates veniam iusto vel quisquam. Fugit ut maxime incidunt accusantium totam repellendus eum error. Et repudiandae eum iste qui et ut ab alias.</p>
+              <ul>
+                <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li><i class="ion-android-checkmark-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              </ul>
+            </div>
+      </div>  
+  </section>
+ <div class="container">
+             <!-- The grid: three columns -->
+<div class="container row">
+    <div class="column fa fa-cog" onclick="openTab('b1');" style="background-color: rgb(238, 180, 73); border-radius: 15px;">Our Mission</div>
+    <div class="column fa fa-hourglass" onclick="openTab('b2');" style="background-color: rgb(238, 180, 73);border-radius: 15px;">Our Vision</div>
+    <div class="column fa fa-object-group" onclick="openTab('b3');" style="background-color: rgb(238, 180, 73);border-radius: 15px;">Our Objective</div>
+  </div>
+  
+  <!-- The expanding grid (hidden by default) -->
+  <div id="b1" class="containerTab" style="display:none;background:rgb(230, 250, 250)">
+    <!-- If you want the ability to close the container, add a close button -->
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+    <h2><span style="color: rgb(201, 56, 230);">Our</span> Mission</h2>
+    <p>Lorem ipsum..</p>
+  </div>
+  
+  <div id="b2" class="containerTab" style="display:none;background:rgb(230, 250, 250)">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+    <h2><span style="color: rgb(201, 56, 230);">Our</span> Vision</h2>
+    <p>Lorem ipsum..</p>
+  </div>
+  
+  <div id="b3" class="containerTab" style="display:none;background:rgb(230, 250, 250)">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+    <h2><span style="color: rgb(201, 56, 230);">Our</span> Objective</h2>
+    <p>Lorem ipsum..</p>
+  </div>
+</div>
+</main>
+{% endblock content %}
+
+
+    

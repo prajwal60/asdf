@@ -1,0 +1,75 @@
+{% extends 'main.html' %}
+{% block nav_aboutus%}
+    class="active"
+{% endblock %}
+{% load static %}
+{% block content %}
+
+<main id="main">    
+    <section id="about" class="section-bg">
+        <div class="container">
+          <div class="row">  
+            <div class="col-lg-5 col-md-6">
+              <div class="about-img" >
+                <img src="{% static '/img/about-img.jpg' %}" alt="">
+              </div>
+            </div>
+  
+            <div class="col-lg-7 col-md-6">
+              <div class="about-content">
+                <h2>About Us</h2>
+                {% for about in company %}
+               
+                <h3>{{about.welcome}}</h3>
+                <p>{{about.description1}}</p>
+                      <p>{{about.description2}}</p>
+                      <ul>
+                        <li><i class="ion-android-checkmark-circle"></i> {{about.feature1}}</li>
+                        <li><i class="ion-android-checkmark-circle"></i> {{about.feature2}}</li>
+                        <li><i class="ion-android-checkmark-circle"></i> {{about.feature3}}</li>
+                        <li><i class="ion-android-checkmark-circle"></i> {{about.feature4}}</li>
+                </ul>
+                  
+                {% endfor %}
+                  
+                
+              </div>
+            </div>
+          </div>
+        </div>  
+    </section>
+    <section id="about">
+        <div class="container" style="margin-top: 30px;">
+            <div class="row">  
+              <div class="col-lg-7 col-md-6">
+                <div class="about-content">
+                    <h2>About Team</h2>
+                    {% for about in team %}               
+                      <h3>{{about.welcome}}</h3>
+                      <p>{{about.description1}}</p>
+                      <p>{{about.description2}}</p>
+                      <ul>
+                        <li><i class="ion-android-checkmark-circle"></i> {{about.feature1}}</li>
+                        <li><i class="ion-android-checkmark-circle"></i> {{about.feature2}}</li>
+                        <li><i class="ion-android-checkmark-circle"></i> {{about.feature3}}</li>
+                        <li><i class="ion-android-checkmark-circle"></i> {{about.feature4}}</li>
+                      </ul>
+                  
+                {% endfor %}
+                  </div>
+              </div>
+    
+              <div class="col-lg-5 col-md-6">
+                <div class="about-img">
+                    <img src="{% static '/img/about-img.jpg' %}" alt="">
+                </div>                
+              </div>
+
+            </div>
+          </div>  
+      </section>
+</main>
+
+    
+{% endblock content %}
+    
