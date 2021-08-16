@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields import CharField
 
 # Create your models here.
 
@@ -74,7 +75,105 @@ class DigitalMarketing(models.Model):
     def __str__(self):
         return self.topic
 
+class SoftwareDevelopment(models.Model):
+    name = models.CharField(max_length=50,default="Software Development")
+    image = models.ImageField(upload_to= 'static/img/services/')
+    topic = models.CharField(max_length=250)
+    description1 = models.CharField(max_length=500)
+    description2 = models.TextField()
+    feature1 = models.CharField(max_length=250)
+    feature2 = models.CharField(max_length=250)
+    feature3 = models.CharField(max_length=250)
+    feature4 = models.CharField(max_length=250)
+    feature5 = models.CharField(max_length=250)
 
+    def __str__(self):
+        return self.name
+
+class WebDevelopment(models.Model):
+    name = models.CharField(max_length=50,default="Web Development")
+    image = models.ImageField(upload_to= 'static/img/services/')
+    topic = models.CharField(max_length=250)
+    description1 = models.CharField(max_length=500)
+    description2 = models.TextField()
+    feature1 = models.CharField(max_length=250)
+    feature2 = models.CharField(max_length=250)
+    feature3 = models.CharField(max_length=250)
+    feature4 = models.CharField(max_length=250)
+    feature5 = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.name
+
+class MobileDevelopment(models.Model):
+    name = models.CharField(max_length=50,default="Mobile App Development")
+    image = models.ImageField(upload_to= 'static/img/services/')
+    topic = models.CharField(max_length=250)
+    description1 = models.CharField(max_length=500)
+    description2 = models.TextField()
+    feature1 = models.CharField(max_length=250)
+    feature2 = models.CharField(max_length=250)
+    feature3 = models.CharField(max_length=250)
+    feature4 = models.CharField(max_length=250)
+    feature5 = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.name
+
+class DomainHosting(models.Model):
+    name = models.CharField(max_length=50,default="Domain & Hosting")
+    image = models.ImageField(upload_to= 'static/img/services/')
+    topic = models.CharField(max_length=250)
+    description1 = models.CharField(max_length=500)
+    description2 = models.TextField()
+    feature1 = models.CharField(max_length=250)
+    feature2 = models.CharField(max_length=250)
+    feature3 = models.CharField(max_length=250)
+    feature4 = models.CharField(max_length=250)
+    feature5 = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.name   
+
+class VideoEditing(models.Model):
+    name = models.CharField(max_length=50,default="Video Editing")
+    image = models.ImageField(upload_to= 'static/img/services/')
+    topic = models.CharField(max_length=250)
+    description1 = models.CharField(max_length=500)
+    description2 = models.TextField()
+    feature1 = models.CharField(max_length=250)
+    feature2 = models.CharField(max_length=250)
+    feature3 = models.CharField(max_length=250)
+    feature4 = models.CharField(max_length=250)
+    feature5 = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.name
+
+class GraphicDesign(models.Model):
+    name = models.CharField(max_length=50,default="Graphic Design")
+    image = models.ImageField(upload_to= 'static/img/services/')
+    topic = models.CharField(max_length=250)
+    description1 = models.CharField(max_length=500)
+    description2 = models.TextField()
+    feature1 = models.CharField(max_length=250)
+    feature2 = models.CharField(max_length=250)
+    feature3 = models.CharField(max_length=250)
+    feature4 = models.CharField(max_length=250)
+    feature5 = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.name
+
+class ContactUs(models.Model):
+    name = models.CharField(max_length=150)
+    email = models.CharField(max_length=200)
+    subject = models.CharField(max_length=300)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name
+    
     
     
     

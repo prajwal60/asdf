@@ -1,4 +1,4 @@
-from website.models import AboutUs,AboutTeam, Company, Faq, Testimonial,team
+from website.models import AboutUs,AboutTeam, Company, Faq, SoftwareDevelopment, Testimonial, VideoEditing,team,ContactUs
 from django.shortcuts import render
 
 # Create your views here.
@@ -15,6 +15,10 @@ def index(request):
         "testimonial":testimonial,
         "company":company
      }
+
+    contact = ContactUs.objects.all()
+    print(request.POST)
+
     return render(request,'index.html',context)
 
 def aboutus(request):
@@ -31,8 +35,14 @@ def aboutus(request):
 def services(request):   
     return render(request,'services.html')
 
-def software(request):   
-    return render(request,'software.html')
+def software(request): 
+
+    software = SoftwareDevelopment.objects.all() 
+    context = {
+        "software": software
+    }
+
+    return render(request,'software.html',context)
 
 def school(request):   
     return render(request,'school.html')
@@ -49,8 +59,12 @@ def mobile(request):
 def domain(request):   
     return render(request,'domainWebHost.html')
 
-def video(request):   
-    return render(request,'video.html')
+def video(request): 
+    video = VideoEditing.objects.all()
+    context={
+        "video" : video
+    }  
+    return render(request,'video.html',context)
 
 def graphic(request):   
     return render(request,'graphic.html')

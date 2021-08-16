@@ -7,13 +7,13 @@
 {%load static%}
 {% block content %}
 
-<section id="intro" class="clearfix">
+<section id="intro" class="clearfix wow fadeInUp">
     <div class="container d-flex h-100">
       <div class="row justify-content-center align-self-center">
         <div class="col-md-6 intro-info order-md-first order-last">
-          <h2>B & T Solution<br><span>Your Business!</span></h2>
+          <h2 style="font-family: Audiowide;">Virtual Corp<br><span style="font-size: 22px;" >Technology For The Future</span></h2>
           <div>
-            <a href="#about" class="btn-get-started scrollto">Get A Quote </a>
+            <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSHwsJVFbdMCXNljnTvxjSnqBDMLnmpnnJzhVdgFFxcBhtWkfbbrDWzGRHcwXrrMdSQClrJD" target="_blank" class="btn-get-started scrollto">Get A Quote </a>
           </div>
         </div>  
         <div class="col-md-6 intro-img order-md-last order-first">
@@ -28,7 +28,7 @@
     <!--==========================
       About Us Section
     ============================-->
-    <section id="about">
+    <section id="about" class="wow fadeInUp">
 
       <div class="container">
         <div class="row">
@@ -185,7 +185,7 @@
 
       </div>
 
-      <div class="container">
+      <div class="container wow fadeInUp">
         <div class="row counters">
 
           <div class="col-lg-3 col-6 text-center">
@@ -220,11 +220,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-9 text-center text-lg-left">
-            <h3 class="cta-title">Call To Action</h3>
-            <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h3 class="cta-title">Explain your Dream</h3>
+            <p class="cta-text">We are here to listen, advise, design and support you to in your every steps. All we want is warm relationship between you and us. Press that button to explain your idea.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
+            <a class="cta-btn align-middle" href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRrlQnfnbzKqXRQDDpgKdjnNjdMNrdNcWqDZPKDxjWSVjlXmCHpZNgLdKhKTLzNKGGTwmtl" target="_blank">Explain Here</a>
           </div>
         </div>
 
@@ -279,10 +279,36 @@
     </section><!-- #about -->
 
    
+    
+
     <!--==========================
       Clients Section
     ============================-->
-    <section id="testimonials" class="section-bg">
+    <section id="clients" class="section-bg wow fadeInUp">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Our Clients</h3>
+        </header>
+
+        <div class="owl-carousel clients-carousel">
+          <img src="{% static '/img/clients/client-1.png' %}" alt="">
+          <img src="{% static '/img/clients/client-2.png' %}" alt="">
+          <img src="{% static '/img/clients/client-3.png' %}" alt="">
+          <img src="{% static '/img/clients/client-4.png' %}" alt="">
+          <img src="{% static '/img/clients/client-5.png' %}" alt="">
+          <img src="{% static '/img/clients/client-6.png' %}" alt="">
+          <img src="{% static '/img/clients/client-7.png' %}" alt="">
+          <img src="{% static '/img/clients/client-8.png' %}" alt="">
+        </div>
+
+      </div>
+    </section><!-- #clients -->
+
+<!--==========================
+      Clients Section
+    ============================-->
+    <section id="testimonials" class="wow fadeInUp">
       <div class="container">
 
         <header class="section-header">
@@ -316,32 +342,6 @@
     </section><!-- #testimonials -->
 
   
-
-    <!--==========================
-      Clients Section
-    ============================-->
-    <section id="clients" class="wow fadeInUp">
-      <div class="container">
-
-        <header class="section-header">
-          <h3>Our Clients</h3>
-        </header>
-
-        <div class="owl-carousel clients-carousel">
-          <img src="{% static '/img/clients/client-1.png' %}" alt="">
-          <img src="{% static '/img/clients/client-2.png' %}" alt="">
-          <img src="{% static '/img/clients/client-3.png' %}" alt="">
-          <img src="{% static '/img/clients/client-4.png' %}" alt="">
-          <img src="{% static '/img/clients/client-5.png' %}" alt="">
-          <img src="{% static '/img/clients/client-6.png' %}" alt="">
-          <img src="{% static '/img/clients/client-7.png' %}" alt="">
-          <img src="{% static '/img/clients/client-8.png' %}" alt="">
-        </div>
-
-      </div>
-    </section><!-- #clients -->
-
-
 
     <!--==========================
       Team Section

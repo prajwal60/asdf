@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>B & T Solution </title>
+  <title>VIRTUAL CORP </title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -15,6 +15,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
 
   <!-- Bootstrap CSS File -->
   <link href="{% static '/lib/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
@@ -28,7 +29,15 @@
 
   <!-- Main Stylesheet File -->
   <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
-
+<style>
+  .form-control{
+    margin-top: 1rem;
+  }
+  .sendbutton{
+    margin-top: 1rem;
+    margin-left: 12rem;
+  }
+</style>
 
 
 
@@ -37,6 +46,34 @@
 
 <body>
 
+  <!-- Messenger Chat Plugin Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Chat Plugin code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "105489228465967");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml            : true,
+        version          : 'v11.0'
+      });
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
   <!--==========================
   Header
   ============================-->
@@ -44,11 +81,12 @@
 
     <div id="topbar">
       <div class="container">
-        <div class="social-links">
-          <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-          <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-          <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-          <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+        
+        <div class="social-links">          
+          <a href="https://twitter.com/virtualcorp2021" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a href="https://www.facebook.com/virtualcorp2021/?ref=pages_you_manage" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/company/virtualcorp2021/" class="linkedin" target="_blank"><i class="fa fa-linkedin" target="_blank"></i></a>
+          <a href="https://www.instagram.com/virtualcorp2021/" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a>
         </div>
       </div>
     </div>
@@ -56,35 +94,35 @@
     <div class="container">
 
       <div class="logo float-left">
-        <h1 class="text-light"><a href="{% url 'website:index' %}" class="scrollto"><span>B & T </span>Solution</a></h1>
+        <h1 class="text-light"><a href="{% url 'website:index' %}" class="scrollto" style="font-family: Audiowide;"><span style="font-family: Audiowide;">Virtual </span>CORP</a></h1>
         <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
 
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
           <li {% block nav_index%}{% endblock %}><a href="{% url 'website:index' %}">Home</a></li>
-          <li {% block nav_aboutus%}{% endblock %}><a href="{% url 'website:aboutus' %}">About Us</a></li>          
-          <li class="drop-down"><a href="#">Our Products</a>
+          <li {% block nav_aboutus%}{% endblock %}><a href="{% url 'website:aboutus' %}">About Us</a></li>                  
+          <!-- <li class="drop-down"><a href="#">Our Products</a>
             <ul>
-              <li><a href="{% url 'website:school' %}">School Application</a></li>
-              <!-- <li><a href="#">Hospital ERP</a></li> -->
-              <li><a href="{% url 'website:bulkSms' %}">Web SMS</a></li>
-              <!-- <li><a href="#">Accounting Solution</a></li>
+              <li><a href="#">School Application</a></li>
+              <li><a href="#">Hospital ERP</a></li> 
+              <li><a href="#">Web SMS</a></li>
+              <li><a href="#">Accounting Solution</a></li>
               <li><a href="#">Hotel Management</a></li>
-              <li><a href="#">Academic ERP</a></li> -->
+              <li><a href="#">Academic ERP</a></li> 
             </ul>
-          </li>
-          <li class="drop-down"><a href="{% url 'website:services' %}">Our Services</a>
+          </li> -->
+          <li class="drop-down"><a href="#">Our Services</a>
             <ul>
               <li><a href="{% url 'website:software' %}">Software Development</a></li>
               <li><a href="{% url 'website:webapp' %}">Web Application</a></li>
               <li><a href="{% url 'website:mobile' %}">Mobile Application</a></li>
               <li><a href="{% url 'website:domain' %}">Domain & Hosting</a></li>
               <li><a href="{% url 'website:video' %}">Video Editing</a></li>
-              <li><a href="{% url 'website:graphic' %}">Graphic Designing</a></li>
-            </ul>
+              <li><a href="{% url 'website:graphic' %}">Graphic Designing</a></li>            </ul>
           </li>
           <li><a href="#footer">Contact Us</a></li>
+          <li><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSHwsJVFbdMCXNljnTvxjSnqBDMLnmpnnJzhVdgFFxcBhtWkfbbrDWzGRHcwXrrMdSQClrJD" target="_blank" c>Get A Quote </a></li>  
         </ul>
       </nav><!-- .main-nav -->
       
@@ -99,7 +137,7 @@
 
 
   
-  <footer id="footer" class="section-bg">
+  <footer id="footer" class="section-bg wow fadeInUp">
     <!--==========================
         Footer
     ============================-->
@@ -115,16 +153,16 @@
                 <div class="col-sm-6">
 
                   <div class="footer-info">
-                    <h3>B & T Solution</h3>
-                    <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+                    <h3 style="font-family: Audiowide;">Virtual Crop</h3>
+                    <p>We are equipped with modern technology to help our valuable customer properly. We are focused to digitalize your business by providing technical solution to your complex problem</p>
                   </div>
 
                   <div class="footer-newsletter">
-                    <h4>Our Newsletter</h4>
-                    <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem.</p>
-                    <form action="" method="post">
-                      <input type="email" name="email"><input type="submit"  value="Subscribe">
-                    </form>
+                    <h4>Customer Support:</h4>
+                    <p><strong>Phone:</strong> +977 014433318<br>
+                      <strong>Email:</strong> virtualcorp2021@gmail.com<br>
+                    </p>
+
                   </div>
 
                 </div>
@@ -144,19 +182,19 @@
                   <div class="footer-links">
                     <h4>Contact Us</h4>
                     <p>
-                      Nijgahd 09, Bara <br>
-                      SahidChowk, 44401<br>
+                      Kalopul 05, Kathmandu <br>
+                      Kathmandu, 44600<br>
                       Nepal <br>
-                      <strong>Phone:</strong> +977 9861466942<br>
-                      <strong>Email:</strong> iamprajwalghimire@gmail.com<br>
+                      <strong>Phone:</strong> +977 014433318<br>
+                      <strong>Email:</strong> virtualcorp2021@gmail.com<br>
                     </p>
                   </div>
 
                   <div class="social-links">
-                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                    <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/virtualcorp2021/?ref=pages_you_manage" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/virtualcorp2021/?ref=pages_you_manage" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/virtualcorp2021/" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/virtualcorp2021/" class="linkedin" target="_blank"><i class="fa fa-linkedin" target="_blank"></i></a>
                   </div>
 
                 </div>
@@ -167,32 +205,27 @@
 
           <div class="col-lg-6">
 
-            <div class="form">
+            <div class="form" >
+             
               
               <h4>Send us a message</h4>
               <p>Feel free to send us a message.</p>
-              <form action="" method="post" role="form" class="contactForm">
-                <div class="form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                  <div class="validation"></div>
-                </div>
+              <form method="POST">
+                {% csrf_token %}
+                
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                 
+                
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                
+                
+                  <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number" required>
+                 
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                 
+                 <textarea  class="form-control" name="message" rows="5"  placeholder="Please write something for us" required></textarea>
+                  <button class="sendbutton" type="submit">Send Message</button> 
 
-                <div id="sendmessage">Your message has been sent. Thank you!</div>
-                <div id="errormessage"></div>
-
-                <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
               </form>
             </div>
           </div>        
@@ -204,13 +237,9 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>My Company</strong>. All Rights Reserved
+        &copy; Copyright <a href="{% url 'website:index' %}"><strong style="font-family: Audiowide; color: rgb(80, 2, 110);">Virtual Corp.</strong></a> All Rights Reserved
       </div>
       <div class="credits">
-        <!--
-          Some Commits
-        -->
-        Designed by <a href="#">Prajwal</a>
       </div>
     </div>
   </footer><!-- #footer -->
