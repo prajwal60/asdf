@@ -1,4 +1,4 @@
-from website.models import AboutUs,AboutTeam, Company, Faq, SoftwareDevelopment, Testimonial, VideoEditing,team,ContactUs
+from website.models import AboutUs,AboutTeam, Company, DomainHosting, Faq, GraphicDesign, MobileDevelopment, SoftwareDevelopment, Testimonial, VideoEditing, WebDevelopment,team,ContactUs
 from django.shortcuts import render
 
 # Create your views here.
@@ -15,9 +15,9 @@ def index(request):
         "testimonial":testimonial,
         "company":company
      }
-
-    contact = ContactUs.objects.all()
-    print(request.POST)
+    contact(request) 
+     
+    
 
     return render(request,'index.html',context)
 
@@ -30,9 +30,12 @@ def aboutus(request):
         "team":team,
         
     }
+    contact(request) 
+   
     return render(request,'aboutus.html', context)
 
-def services(request):   
+def services(request):  
+    contact(request)   
     return render(request,'services.html')
 
 def software(request): 
@@ -41,33 +44,68 @@ def software(request):
     context = {
         "software": software
     }
-
+    contact(request) 
     return render(request,'software.html',context)
 
-def school(request):   
+def school(request):  
+    contact(request) 
     return render(request,'school.html')
 
-def bulkSms(request):   
+def bulkSms(request): 
+    contact(request)   
     return render(request,'bulksms.html')
 
-def webapp(request):   
-    return render(request,'webApplication.html')
+def webapp(request):  
+    webapplication = WebDevelopment.objects.all() 
+    context = {
+        "webapplication": webapplication
+    }
+    contact(request) 
+    return render(request,'webApplication.html',context)
 
-def mobile(request):   
-    return render(request,'mobile.html')
+def mobile(request):  
+    mobile = MobileDevelopment.objects.all() 
+    context = {
+        "mobile": mobile 
+    }
+    contact(request) 
+    return render(request,'mobile.html',context)
 
-def domain(request):   
-    return render(request,'domainWebHost.html')
+def domain(request): 
+    domain = DomainHosting.objects.all() 
+    context = {
+        "domain": domain 
+    }  
+    contact(request)   
+    return render(request,'domainWebHost.html',context)
 
 def video(request): 
     video = VideoEditing.objects.all()
     context={
         "video" : video
-    }  
+    } 
+    contact(request) 
     return render(request,'video.html',context)
 
-def graphic(request):   
-    return render(request,'graphic.html')
+def graphic(request):  
+    design = GraphicDesign.objects.all() 
+    context = {
+        "design": design 
+    } 
+    contact(request) 
+    return render(request,'graphic.html',context)
 
-def terms(request):   
+def terms(request):  
+    contact(request) 
     return render(request,'terms.html')
+
+
+def contact(request):
+    if request.method =="POST":
+        contact = ContactUs()
+        contact.name=request.POST['name']
+        contact.email=request.POST['email']
+        contact.phone=request.POST['phone']
+        contact.subject=request.POST['subject']
+        contact.message=request.POST['message']
+        contact.save()

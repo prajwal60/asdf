@@ -168,6 +168,7 @@ class GraphicDesign(models.Model):
 class ContactUs(models.Model):
     name = models.CharField(max_length=150)
     email = models.CharField(max_length=200)
+    phone = models.CharField(max_length=200)
     subject = models.CharField(max_length=300)
     message = models.TextField()
 

@@ -10,16 +10,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='ContactUs',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=150)),
-                ('email', models.CharField(max_length=200)),
-                ('subject', models.CharField(max_length=300)),
-                ('message', models.TextField()),
-            ],
-        ),
+        
         migrations.CreateModel(
             name='DigitalMarketing',
             fields=[
