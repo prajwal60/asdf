@@ -36,7 +36,7 @@ class Faq(models.Model):
 
 class team(models.Model):
     full_name = models.CharField(max_length=50)
-    picture = models.ImageField(upload_to='static/img/team/')
+    picture = models.ImageField(upload_to='img/')
     post = models.CharField(max_length=200,blank=True, null=True, default='#')
     facebook = models.CharField(max_length=1000,blank=True, null=True, default='#')
     twitter = models.CharField(max_length=1000,blank=True, null=True, default='#')
